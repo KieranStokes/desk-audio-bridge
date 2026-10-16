@@ -4,6 +4,7 @@ import IpcStreaming from './ipc/streaming'
 import IpcxCloud from './ipc/xcloud'
 import IpcApp from './ipc/app'
 import IpcSettings from './ipc/settings'
+import IpcBridge from './ipc/bridge'
 
 import { ipcMain } from 'electron'
 
@@ -13,6 +14,7 @@ interface IpcChannels {
     app: IpcApp;
     xCloud: IpcxCloud;
     settings: IpcSettings;
+    bridge: IpcBridge;
 }
 
 export default class Ipc {
@@ -30,6 +32,7 @@ export default class Ipc {
             app: new IpcApp(this._application),
             xCloud: new IpcxCloud(this._application),
             settings: new IpcSettings(this._application),
+            bridge: new IpcBridge(this._application),
         }
 
         for(const channel in this._channels){

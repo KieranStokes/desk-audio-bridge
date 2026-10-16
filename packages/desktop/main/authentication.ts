@@ -1,4 +1,4 @@
-import { session, dialog } from 'electron'
+import { clipboard, dialog, shell } from 'electron'
 import { createWindow } from './helpers'
 import Application from './application'
 import { Msal } from 'xal-node'
@@ -18,14 +18,31 @@ export default class Authentication {
     _isAuthenticating:boolean = false
     _isAuthenticated:boolean = false
     _appLevel:number = 0
+    _authPrompt?:{
+        userCode:string;
+        verificationUri:string;
+        verificationUrl:string;
+        expiresAt:number;
+    }
+    _authError:string = ''
+    private _deviceCodeFlowActive:boolean = false
+    private _streamingRefreshPromise?:Promise<void>
 
     private t = i18n.t.bind(i18n);
 
     constructor(application:Application){
         this._application = application
         this._tokenStore = new AuthTokenStore()
-        this._tokenStore.load()
         this._msal = new Msal(this._tokenStore)
+    }
+
+    loadTokenStore(){
+        this._tokenStore.load()
+        const result = this._tokenStore.getLastLoadResult()
+        this._application.writeBridgeLog('auth.token-store-loaded', {status: result.status})
+        if(result.status === 'error')
+            this._authError = 'Your saved Microsoft sign-in could not be unlocked. Please sign in again.'
+        return result
     }
 
     checkAuthentication(){
@@ -109,7 +126,14 @@ export default class Authentication {
     }
 
     startAuthflow(){
+        if(this._deviceCodeFlowActive)
+            return
+
         this._application.log('authenticationV2', '[startAuthflow()] Starting authentication flow')
+        this._deviceCodeFlowActive = true
+        this._isAuthenticating = true
+        this._authError = ''
+        this._authPrompt = undefined
 
         const forceRegionIp = this._application._store.get('force_region_ip', '')
         if (forceRegionIp && typeof forceRegionIp === 'string' && forceRegionIp.trim() !== '') {
@@ -121,30 +145,65 @@ export default class Authentication {
 
         this._msal.doDeviceCodeAuth().then((data) => {
             this._application.log('authenticationV2', '[startAuthflow()] Starting devicecode auth:', data)
-
-            dialog.showMessageBox({
-                message: data.message+' Click OK to continue after entering code.',
-                type: 'info',
+            const verificationUrl = this.createVerificationUrl(data.verification_uri, data.user_code)
+            this._authPrompt = {
+                userCode: data.user_code,
+                verificationUri: data.verification_uri,
+                verificationUrl,
+                expiresAt: Date.now() + (data.expires_in * 1000),
+            }
+            this._application.showMainWindow()
+            this._application.writeBridgeLog('auth.device-code-created', {
+                verificationUri: data.verification_uri,
+                expiresInSeconds: data.expires_in,
+            })
+            this.openAuthPage().catch((error) => {
+                this._application.log('authenticationV2', '[startAuthflow()] Failed to open the system browser:', error)
+                this._application.writeBridgeLog('auth.browser-open-failed', {error: String(error)})
             })
 
-            this._isAuthenticating = true
-
-            this._msal.doPollForDeviceCodeAuth(data.device_code).then((token) => {
+            this._msal.doPollForDeviceCodeAuth(data.device_code, data.expires_in * 1000).then((token) => {
                 this._application.log('authenticationV2', '[startAuthflow()] Devicecode authentication successful:', token)
-
+                this._deviceCodeFlowActive = false
+                this._authPrompt = undefined
                 this.getTokens()
 
             }).catch((error) => {
                 this._application.log('authenticationV2', '[startAuthflow()] Error during devicecode polling auth:', error)
-                dialog.showErrorBox('Error', 'Failed to perform MSAL authentixation: ' + JSON.stringify(error))
-
+                this._deviceCodeFlowActive = false
                 this._isAuthenticating = false
+                this._authPrompt = undefined
+                this._authError = 'Microsoft sign-in expired or was cancelled. Please try again.'
+                this._application.writeBridgeLog('auth.device-code-failed', {error: String(error)})
             })
 
         }).catch((error) => {
             this._application.log('authenticationV2', '[startAuthflow()] Error during devicecode auth:', error)
-            dialog.showErrorBox('Error', this.t('errors.errorAuthentificationUser') + ' ' + JSON.stringify(error))
+            this._deviceCodeFlowActive = false
+            this._isAuthenticating = false
+            this._authPrompt = undefined
+            this._authError = 'Could not start Microsoft sign-in. Check your connection and try again.'
+            this._application.writeBridgeLog('auth.device-code-request-failed', {error: String(error)})
         })
+    }
+
+    private createVerificationUrl(verificationUri:string, userCode:string){
+        const url = new URL(verificationUri)
+        url.searchParams.set('otc', userCode)
+        return url.toString()
+    }
+
+    openAuthPage(){
+        if(!this._authPrompt)
+            return Promise.reject(new Error('No Microsoft sign-in is currently in progress.'))
+        return shell.openExternal(this._authPrompt.verificationUrl)
+    }
+
+    copyAuthCode(){
+        if(!this._authPrompt)
+            return false
+        clipboard.writeText(this._authPrompt.userCode)
+        return true
     }
 
     openAuthWindow(url){
@@ -175,6 +234,42 @@ export default class Authentication {
 
         return { xHomeToken: streamingTokens.xHomeToken, xCloudToken: streamingTokens.xCloudToken }
         // return { xHomeToken: streamingTokens.xHomeToken, xCloudToken: undefined }
+    }
+
+    ensureHomeStreamingTokenFresh(minimumSeconds = 120){
+        const secondsRemaining = this._application.getHomeStreamingTokenSecondsLeft()
+        if(secondsRemaining > minimumSeconds)
+            return Promise.resolve()
+        return this.refreshStreamingTokens('expired-or-near-expiry')
+    }
+
+    refreshStreamingTokens(reason = 'requested'){
+        if(this._streamingRefreshPromise)
+            return this._streamingRefreshPromise
+
+        this._application.writeBridgeLog('auth.streaming-token-refresh-started', {
+            reason,
+            secondsRemaining: this._application.getHomeStreamingTokenSecondsLeft(),
+        })
+        this._streamingRefreshPromise = this.getStreamingToken()
+            .then(streamingTokens => {
+                this._application.updateStreamingTokens(streamingTokens)
+                this._application.writeBridgeLog('auth.streaming-token-refresh-completed', {
+                    reason,
+                    secondsRemaining: this._application.getHomeStreamingTokenSecondsLeft(),
+                })
+            })
+            .catch(error => {
+                this._application.writeBridgeLog('auth.streaming-token-refresh-failed', {
+                    reason,
+                    status: error?.status,
+                    error: error?.message || error?.body || String(error),
+                })
+                throw error
+            })
+            .finally(() => this._streamingRefreshPromise = undefined)
+
+        return this._streamingRefreshPromise
     }
 
 

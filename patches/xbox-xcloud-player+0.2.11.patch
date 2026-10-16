@@ -1,0 +1,532 @@
+diff --git a/node_modules/xbox-xcloud-player/dist/Channel/Control.js b/node_modules/xbox-xcloud-player/dist/Channel/Control.js
+index abb89a9..b327b5a 100644
+--- a/node_modules/xbox-xcloud-player/dist/Channel/Control.js
++++ b/node_modules/xbox-xcloud-player/dist/Channel/Control.js
+@@ -15,11 +15,26 @@ class ControlChannel extends Base_1.default {
+             'accessKey': '4BDB3609-C1F1-4195-9B37-FEFF45DA8B8E',
+         });
+         this.send(authRequest);
+-        this._client._inputDriver.start();
+-        this._client._keyboardDriver.start();
+-        this.sendGamepadAdded(0);
++        if (this._client._config.input_enabled === false) {
++            // Xbox requires this handshake to exit its 60-second startup timeout.
++            // Release the last remote slot immediately, without enabling input.
++            for (const wasAdded of [true, false]) {
++                this.send(JSON.stringify({
++                    'message': 'gamepadChanged',
++                    'gamepadIndex': 3,
++                    'wasAdded': wasAdded,
++                }));
++            }
++        }
++        else {
++            this._client._inputDriver.start();
++            this._client._keyboardDriver.start();
++            this.sendGamepadAdded(0);
++        }
+     }
+     sendGamepadAdded(gamepadIndex) {
++        if (this._client._config.input_enabled === false)
++            return;
+         const gamepadRequest = JSON.stringify({
+             'message': 'gamepadChanged',
+             'gamepadIndex': gamepadIndex,
+@@ -28,6 +43,8 @@ class ControlChannel extends Base_1.default {
+         this.send(gamepadRequest);
+     }
+     sendGamepadRemoved(gamepadIndex) {
++        if (this._client._config.input_enabled === false)
++            return;
+         const gamepadRequest = JSON.stringify({
+             'message': 'gamepadChanged',
+             'gamepadIndex': gamepadIndex,
+@@ -43,8 +60,10 @@ class ControlChannel extends Base_1.default {
+     onClose(event) {
+         super.onClose(event);
+         // console.log('xCloudPlayer Channel/Control.ts - ['+this._channelName+'] onClose:', event)
+-        this._client._inputDriver.stop();
+-        this._client._keyboardDriver.stop();
++        if (this._client._inputDriver)
++            this._client._inputDriver.stop();
++        if (this._client._keyboardDriver)
++            this._client._keyboardDriver.stop();
+     }
+     requestKeyframeRequest() {
+         console.log('xCloudPlayer Channel/Control.ts - [' + this._channelName + '] User requested Video KeyFrame');
+diff --git a/node_modules/xbox-xcloud-player/dist/Channel/Input.js b/node_modules/xbox-xcloud-player/dist/Channel/Input.js
+index 4ea0bcc..94f39bd 100644
+--- a/node_modules/xbox-xcloud-player/dist/Channel/Input.js
++++ b/node_modules/xbox-xcloud-player/dist/Channel/Input.js
+@@ -57,12 +57,12 @@ class InputChannel extends Base_1.default {
+         const Packet = new Packet_1.default(this._inputSequenceNum);
+         Packet.setMetadata(2);
+         this.send(Packet.toBuffer());
+-        if (this._client._config.input_legacykeyboard === false) {
++        if (this._client._config.input_enabled !== false && this._client._config.input_legacykeyboard === false) {
+             this.getClient()._inputDriver.run();
+         }
+         this._inputInterval = setInterval(() => {
+             // Keyboard mask for legacy input
+-            if (this._client._config.input_legacykeyboard === true && this.getGamepadQueueLength() === 0) {
++            if (this._client._config.input_enabled !== false && this._client._config.input_legacykeyboard === true && this.getGamepadQueueLength() === 0) {
+                 const gpState = this.getClient()._inputDriver.requestStates();
+                 const kbState = this.getClient()._keyboardDriver.requestState();
+                 const mergedState = this.mergeState(gpState[0], kbState, this._adhocState);
+@@ -70,7 +70,7 @@ class InputChannel extends Base_1.default {
+                 this.queueGamepadState(mergedState);
+                 this._inputFps.count();
+             }
+-            if (this._client._config.input_touch === true && Object.keys(this._touchEvents).length > 0) {
++            if (this._client._config.input_enabled !== false && this._client._config.input_touch === true && Object.keys(this._touchEvents).length > 0) {
+                 for (const pointerEvent in this._touchEvents) {
+                     this._pointerFrames.push({
+                         events: this._touchEvents[pointerEvent].events,
+@@ -129,6 +129,8 @@ class InputChannel extends Base_1.default {
+         }
+     }
+     onMessage(event) {
++        if (this._client._config.input_enabled === false)
++            return;
+         // console.log('xCloudPlayer Channel/Input.ts - ['+this._channelName+'] onMessage:', event)
+         var _a;
+         const dataView = new DataView(event.data);
+@@ -209,11 +211,15 @@ class InputChannel extends Base_1.default {
+         return this._gamepadFrames.length;
+     }
+     queueGamepadState(input) {
++        if (this._client._config.input_enabled === false)
++            return;
+         if (input !== null) {
+             return this._gamepadFrames.push(input);
+         }
+     }
+     queueGamepadStates(inputs) {
++        if (this._client._config.input_enabled === false)
++            return;
+         for (const input in inputs) {
+             this.queueGamepadState(inputs[input]);
+         }
+@@ -237,6 +243,8 @@ class InputChannel extends Base_1.default {
+         return this._keyboardFrames.length;
+     }
+     onPointerMove(e) {
++        if (this._client._config.input_enabled === false)
++            return;
+         e.preventDefault();
+         if (this._mouseActive === true && this._mouseLocked === true) {
+             this._mouseStateX = e.movementX;
+@@ -281,6 +289,8 @@ class InputChannel extends Base_1.default {
+         });
+     }
+     onPointerClick(e) {
++        if (this._client._config.input_enabled === false)
++            return;
+         e.preventDefault();
+         if (e.pointerType === 'touch') {
+             this._mouseActive = false;
+@@ -333,10 +343,14 @@ class InputChannel extends Base_1.default {
+         }
+     }
+     onPointerScroll(e) {
++        if (this._client._config.input_enabled === false)
++            return;
+         e.preventDefault();
+         // console.log('got onpointerscroll', e)
+     }
+     onKeyDown(event) {
++        if (this._client._config.input_enabled === false)
++            return;
+         if (this._mouseActive === true && this._mouseLocked === true) {
+             if (this._keyboardButtonsState[event.keyCode] !== true) {
+                 this._keyboardButtonsState[event.keyCode] = true;
+@@ -357,6 +371,8 @@ class InputChannel extends Base_1.default {
+         }
+     }
+     onKeyUp(event) {
++        if (this._client._config.input_enabled === false)
++            return;
+         if (this._mouseActive === true && this._mouseLocked === true) {
+             this._keyboardButtonsState[event.keyCode] = false;
+             // console.log('keyUp', event.keyCode)
+@@ -410,6 +426,8 @@ class InputChannel extends Base_1.default {
+         return n > t ? t : n < a ? a : this._convertToInt16(n);
+     }
+     pressButton(index, button) {
++        if (this._client._config.input_enabled === false)
++            return;
+         if (this._client._config.input_legacykeyboard === true) {
+             this._client._keyboardDriver.pressButton(button);
+         }
+diff --git a/node_modules/xbox-xcloud-player/dist/Component/Video.js b/node_modules/xbox-xcloud-player/dist/Component/Video.js
+index 761c03d..0c07030 100644
+--- a/node_modules/xbox-xcloud-player/dist/Component/Video.js
++++ b/node_modules/xbox-xcloud-player/dist/Component/Video.js
+@@ -42,14 +42,16 @@ class VideoComponent {
+             this._videoRender = videoRender;
+             videoHolder.appendChild(videoRender);
+             this._videoFps.start();
+-            // Pointer / Mouse events
+-            videoRender.addEventListener('pointermove', (e) => this._client.getChannelProcessor('input').onPointerMove(e), { passive: false }),
+-                videoRender.addEventListener('pointerdown', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
+-                videoRender.addEventListener('pointerup', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
+-                videoRender.addEventListener('wheel', (e) => this._client.getChannelProcessor('input').onPointerScroll(e), { passive: false });
+-            // Keyboard events
+-            window.addEventListener('keydown', (e) => { this._client.getChannelProcessor('input').onKeyDown(e); });
+-            window.addEventListener('keyup', (e) => { this._client.getChannelProcessor('input').onKeyUp(e); });
++            if (this._client._config.input_enabled !== false) {
++                // Pointer / Mouse events
++                videoRender.addEventListener('pointermove', (e) => this._client.getChannelProcessor('input').onPointerMove(e), { passive: false }),
++                    videoRender.addEventListener('pointerdown', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
++                    videoRender.addEventListener('pointerup', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
++                    videoRender.addEventListener('wheel', (e) => this._client.getChannelProcessor('input').onPointerScroll(e), { passive: false });
++                // Keyboard events
++                window.addEventListener('keydown', (e) => { this._client.getChannelProcessor('input').onKeyDown(e); });
++                window.addEventListener('keyup', (e) => { this._client.getChannelProcessor('input').onKeyUp(e); });
++            }
+             // videoHolder.addEventListener("touchmove", (e) => this._client.getChannelProcessor('input').onPointerMove(e)),
+             // videoHolder.addEventListener("touchstart", (e) => this._client.getChannelProcessor('input').onPointerClick(e)),
+             // videoHolder.addEventListener("touchend", (e) => this._client.getChannelProcessor('input').onPointerClick(e)),
+diff --git a/node_modules/xbox-xcloud-player/dist/Library.d.ts b/node_modules/xbox-xcloud-player/dist/Library.d.ts
+index aa67b92..163d97d 100644
+--- a/node_modules/xbox-xcloud-player/dist/Library.d.ts
++++ b/node_modules/xbox-xcloud-player/dist/Library.d.ts
+@@ -5,6 +5,7 @@ interface xCloudPlayerConfig {
+     ui_version?: Array<number>;
+     ui_touchenabled?: boolean;
+     input_driver?: any;
++    input_enabled?: boolean;
+     sound_force_mono?: boolean;
+     input_touch?: boolean;
+     input_mousekeyboard?: boolean;
+diff --git a/node_modules/xbox-xcloud-player/dist/Library.js b/node_modules/xbox-xcloud-player/dist/Library.js
+index 4db9777..fb7e650 100644
+--- a/node_modules/xbox-xcloud-player/dist/Library.js
++++ b/node_modules/xbox-xcloud-player/dist/Library.js
+@@ -338,6 +338,7 @@ class xCloudPlayer {
+         this._maxAudioBitrate = 0;
+         console.log('xCloudPlayer loaded!');
+         this._config = Object.assign({
++            input_enabled: true,
+             input_touch: false,
+             input_mousekeyboard: false,
+             input_legacykeyboard: true,
+@@ -350,14 +351,18 @@ class xCloudPlayer {
+         var _a;
+         this._webrtcClient = new RTCPeerConnection(this._webrtcConfiguration);
+         this._openDataChannels();
+-        if (this._config.input_driver === undefined) {
+-            this._inputDriver = new Gamepad_1.default();
+-        }
+-        else if (this._config.input_driver !== null) {
+-            this._inputDriver = this._config.input_driver;
++        if (this._config.input_enabled !== false) {
++            if (this._config.input_driver === undefined) {
++                this._inputDriver = new Gamepad_1.default();
++            }
++            else if (this._config.input_driver !== null) {
++                this._inputDriver = this._config.input_driver;
++            }
++            if (this._inputDriver) {
++                this._inputDriver.setApplication(this);
++            }
++            this._keyboardDriver = new Keyboard_1.default((_a = this._config.input_mousekeyboard_config) !== null && _a !== void 0 ? _a : Keyboard_1.MouseKeyboardConfig.default());
+         }
+-        this._inputDriver.setApplication(this);
+-        this._keyboardDriver = new Keyboard_1.default((_a = this._config.input_mousekeyboard_config) !== null && _a !== void 0 ? _a : Keyboard_1.MouseKeyboardConfig.default());
+         this._gatherIce();
+         this._webrtcClient.ontrack = (event) => {
+             if (event.track.kind === 'video') {
+@@ -526,12 +531,16 @@ class xCloudPlayer {
+             for (const name in this._webrtcChannelProcessors) {
+                 this._webrtcChannelProcessors[name].destroy();
+             }
+-            this._inputDriver.stop();
+-            this._keyboardDriver.stop();
++            if (this._inputDriver)
++                this._inputDriver.stop();
++            if (this._keyboardDriver)
++                this._keyboardDriver.stop();
+             this._webrtcClient = new RTCPeerConnection(this._webrtcConfiguration);
+             this._openDataChannels();
+-            this._inputDriver.start();
+-            this._keyboardDriver.start();
++            if (this._inputDriver)
++                this._inputDriver.start();
++            if (this._keyboardDriver)
++                this._keyboardDriver.start();
+             this._gatherIce();
+             this._isResetting = false;
+         }
+@@ -550,8 +559,10 @@ class xCloudPlayer {
+             for (const name in this._webrtcChannelProcessors) {
+                 this._webrtcChannelProcessors[name].destroy();
+             }
+-            this._inputDriver.stop();
+-            this._keyboardDriver.stop();
++            if (this._inputDriver)
++                this._inputDriver.stop();
++            if (this._keyboardDriver)
++                this._keyboardDriver.stop();
+         }
+     }
+     getIceCandidates() {
+diff --git a/node_modules/xbox-xcloud-player/src/Channel/Control.ts b/node_modules/xbox-xcloud-player/src/Channel/Control.ts
+index b472535..72a741f 100644
+--- a/node_modules/xbox-xcloud-player/src/Channel/Control.ts
++++ b/node_modules/xbox-xcloud-player/src/Channel/Control.ts
+@@ -15,13 +15,26 @@ export default class ControlChannel extends BaseChannel {
+ 
+         this.send(authRequest)
+ 
+-        this._client._inputDriver.start()
+-        this._client._keyboardDriver.start()
+-
+-        this.sendGamepadAdded(0)
++        if(this._client._config.input_enabled === false){
++            // Xbox requires this handshake to exit its 60-second startup timeout.
++            // Release the last remote slot immediately, without enabling input.
++            for(const wasAdded of [true, false]){
++                this.send(JSON.stringify({
++                    'message': 'gamepadChanged',
++                    'gamepadIndex': 3,
++                    'wasAdded': wasAdded,
++                }))
++            }
++        } else {
++            this._client._inputDriver?.start()
++            this._client._keyboardDriver?.start()
++            this.sendGamepadAdded(0)
++        }
+     }
+ 
+     sendGamepadAdded(gamepadIndex) {
++        if(this._client._config.input_enabled === false) {return}
++
+         const gamepadRequest = JSON.stringify({
+             'message': 'gamepadChanged',
+             'gamepadIndex': gamepadIndex,
+@@ -31,6 +44,8 @@ export default class ControlChannel extends BaseChannel {
+     }
+ 
+     sendGamepadRemoved(gamepadIndex) {
++        if(this._client._config.input_enabled === false) {return}
++
+         const gamepadRequest = JSON.stringify({
+             'message': 'gamepadChanged',
+             'gamepadIndex': gamepadIndex,
+@@ -50,8 +65,8 @@ export default class ControlChannel extends BaseChannel {
+         super.onClose(event)
+         // console.log('xCloudPlayer Channel/Control.ts - ['+this._channelName+'] onClose:', event)
+ 
+-        this._client._inputDriver.stop()
+-        this._client._keyboardDriver.stop()
++        this._client._inputDriver?.stop()
++        this._client._keyboardDriver?.stop()
+     }
+ 
+     requestKeyframeRequest() {
+diff --git a/node_modules/xbox-xcloud-player/src/Channel/Input.ts b/node_modules/xbox-xcloud-player/src/Channel/Input.ts
+index c605282..bf9c8d2 100644
+--- a/node_modules/xbox-xcloud-player/src/Channel/Input.ts
++++ b/node_modules/xbox-xcloud-player/src/Channel/Input.ts
+@@ -112,13 +112,13 @@ export default class InputChannel extends BaseChannel {
+ 
+         this.send(Packet.toBuffer())
+ 
+-        if(this._client._config.input_legacykeyboard === false){
++        if(this._client._config.input_enabled !== false && this._client._config.input_legacykeyboard === false){
+             this.getClient()._inputDriver.run()
+         }
+         
+         this._inputInterval = setInterval(() => {
+             // Keyboard mask for legacy input
+-            if(this._client._config.input_legacykeyboard === true && this.getGamepadQueueLength() === 0){
++            if(this._client._config.input_enabled !== false && this._client._config.input_legacykeyboard === true && this.getGamepadQueueLength() === 0){
+                 const gpState = this.getClient()._inputDriver.requestStates()
+                 const kbState = this.getClient()._keyboardDriver.requestState()
+                 const mergedState = this.mergeState(gpState[0], kbState, this._adhocState)
+@@ -127,7 +127,7 @@ export default class InputChannel extends BaseChannel {
+                 this._inputFps.count()
+             }
+ 
+-            if(this._client._config.input_touch === true && Object.keys(this._touchEvents).length > 0){
++            if(this._client._config.input_enabled !== false && this._client._config.input_touch === true && Object.keys(this._touchEvents).length > 0){
+                 for(const pointerEvent in this._touchEvents){
+                     this._pointerFrames.push({
+                         events: this._touchEvents[pointerEvent].events,
+@@ -191,6 +191,8 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     onMessage(event) {
++        if(this._client._config.input_enabled === false) {return}
++
+         // console.log('xCloudPlayer Channel/Input.ts - ['+this._channelName+'] onMessage:', event)
+ 
+         const dataView = new DataView(event.data)
+@@ -294,10 +296,12 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     queueGamepadState(input:InputFrame) {
++        if(this._client._config.input_enabled === false) {return}
+         if(input !== null) {return this._gamepadFrames.push(input)}
+     }
+ 
+     queueGamepadStates(inputs:Array<InputFrame>) {
++        if(this._client._config.input_enabled === false) {return}
+         for(const input in inputs){
+             this.queueGamepadState(inputs[input])
+         }
+@@ -328,6 +332,7 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     onPointerMove(e){
++        if(this._client._config.input_enabled === false) {return}
+         e.preventDefault()
+ 
+         if(this._mouseActive === true && this._mouseLocked === true){
+@@ -384,6 +389,7 @@ export default class InputChannel extends BaseChannel {
+     _touchLastPointerId = 0
+ 
+     onPointerClick(e){
++        if(this._client._config.input_enabled === false) {return}
+         e.preventDefault()
+ 
+         if (e.pointerType === 'touch'){
+@@ -439,6 +445,7 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     onPointerScroll(e){
++        if(this._client._config.input_enabled === false) {return}
+         e.preventDefault()
+         
+         // console.log('got onpointerscroll', e)
+@@ -454,6 +461,7 @@ export default class InputChannel extends BaseChannel {
+ 
+ 
+     onKeyDown(event){
++        if(this._client._config.input_enabled === false) {return}
+         if(this._mouseActive === true && this._mouseLocked === true){
+             if(this._keyboardButtonsState[event.keyCode] !== true){
+                 this._keyboardButtonsState[event.keyCode] = true
+@@ -478,6 +486,7 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     onKeyUp(event){
++        if(this._client._config.input_enabled === false) {return}
+         if(this._mouseActive === true && this._mouseLocked === true){
+             this._keyboardButtonsState[event.keyCode] = false
+ 
+@@ -544,6 +553,7 @@ export default class InputChannel extends BaseChannel {
+     }
+ 
+     pressButton(index:number, button:string){
++        if(this._client._config.input_enabled === false) {return}
+         if(this._client._config.input_legacykeyboard === true){
+             this._client._keyboardDriver.pressButton(button)
+         } else {
+diff --git a/node_modules/xbox-xcloud-player/src/Component/Video.ts b/node_modules/xbox-xcloud-player/src/Component/Video.ts
+index e9a46f8..fd4d06b 100644
+--- a/node_modules/xbox-xcloud-player/src/Component/Video.ts
++++ b/node_modules/xbox-xcloud-player/src/Component/Video.ts
+@@ -60,15 +60,17 @@ export default class VideoComponent {
+             videoHolder.appendChild(videoRender)
+             this._videoFps.start()
+ 
+-            // Pointer / Mouse events
+-            videoRender.addEventListener('pointermove', (e) => this._client.getChannelProcessor('input').onPointerMove(e), { passive: false }),
+-            videoRender.addEventListener('pointerdown', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
+-            videoRender.addEventListener('pointerup', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
+-            videoRender.addEventListener('wheel', (e) => this._client.getChannelProcessor('input').onPointerScroll(e), { passive: false })
+-
+-            // Keyboard events
+-            window.addEventListener('keydown', (e) => { this._client.getChannelProcessor('input').onKeyDown(e) }) 
+-            window.addEventListener('keyup', (e) => { this._client.getChannelProcessor('input').onKeyUp(e) })
++            if(this._client._config.input_enabled !== false){
++                // Pointer / Mouse events
++                videoRender.addEventListener('pointermove', (e) => this._client.getChannelProcessor('input').onPointerMove(e), { passive: false }),
++                videoRender.addEventListener('pointerdown', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
++                videoRender.addEventListener('pointerup', (e) => this._client.getChannelProcessor('input').onPointerClick(e), { passive: false }),
++                videoRender.addEventListener('wheel', (e) => this._client.getChannelProcessor('input').onPointerScroll(e), { passive: false })
++
++                // Keyboard events
++                window.addEventListener('keydown', (e) => { this._client.getChannelProcessor('input').onKeyDown(e) })
++                window.addEventListener('keyup', (e) => { this._client.getChannelProcessor('input').onKeyUp(e) })
++            }
+ 
+             // videoHolder.addEventListener("touchmove", (e) => this._client.getChannelProcessor('input').onPointerMove(e)),
+             // videoHolder.addEventListener("touchstart", (e) => this._client.getChannelProcessor('input').onPointerClick(e)),
+diff --git a/node_modules/xbox-xcloud-player/src/Library.ts b/node_modules/xbox-xcloud-player/src/Library.ts
+index 655b30b..fe29213 100644
+--- a/node_modules/xbox-xcloud-player/src/Library.ts
++++ b/node_modules/xbox-xcloud-player/src/Library.ts
+@@ -17,6 +17,7 @@ interface xCloudPlayerConfig {
+     ui_version?:Array<number>; // Default: [0,1,0]
+     ui_touchenabled?:boolean;
+     input_driver?:any; // Default: GamepadDriver(), false to disable
++    input_enabled?:boolean; // Default: true. When false no controller is registered or polled.
+     sound_force_mono?:boolean; // Force mono sound. Defaults to false
+ 
+     input_touch?:boolean;
+@@ -367,6 +368,7 @@ export default class xCloudPlayer {
+         console.log('xCloudPlayer loaded!')
+ 
+         this._config = Object.assign({
++            input_enabled: true,
+             input_touch: false,
+             input_mousekeyboard: false,
+             input_legacykeyboard: true,
+@@ -381,15 +383,17 @@ export default class xCloudPlayer {
+         this._webrtcClient = new RTCPeerConnection(this._webrtcConfiguration)
+         this._openDataChannels()
+ 
+-        if(this._config.input_driver === undefined){
+-            this._inputDriver = new GamepadDriver()
++        if(this._config.input_enabled !== false){
++            if(this._config.input_driver === undefined){
++                this._inputDriver = new GamepadDriver()
+ 
+-        } else if(this._config.input_driver !== null){
+-            this._inputDriver = this._config.input_driver
+-        }
++            } else if(this._config.input_driver !== null){
++                this._inputDriver = this._config.input_driver
++            }
+ 
+-        this._inputDriver.setApplication(this)
+-        this._keyboardDriver = new KeyboardDriver(this._config.input_mousekeyboard_config ?? MouseKeyboardConfig.default())
++            this._inputDriver?.setApplication(this)
++            this._keyboardDriver = new KeyboardDriver(this._config.input_mousekeyboard_config ?? MouseKeyboardConfig.default())
++        }
+         this._gatherIce()
+ 
+         this._webrtcClient.ontrack = (event) => {
+@@ -580,13 +584,13 @@ export default class xCloudPlayer {
+                 this._webrtcChannelProcessors[name].destroy()
+             }
+ 
+-            this._inputDriver.stop()
+-            this._keyboardDriver.stop()
++            this._inputDriver?.stop()
++            this._keyboardDriver?.stop()
+ 
+             this._webrtcClient = new RTCPeerConnection(this._webrtcConfiguration)
+             this._openDataChannels()
+-            this._inputDriver.start()
+-            this._keyboardDriver.start()
++            this._inputDriver?.start()
++            this._keyboardDriver?.start()
+ 
+             this._gatherIce()
+             this._isResetting = false
+@@ -606,8 +610,8 @@ export default class xCloudPlayer {
+                 this._webrtcChannelProcessors[name].destroy()
+             }
+ 
+-            this._inputDriver.stop()
+-            this._keyboardDriver.stop()
++            this._inputDriver?.stop()
++            this._keyboardDriver?.stop()
+         }
+     }
+ 

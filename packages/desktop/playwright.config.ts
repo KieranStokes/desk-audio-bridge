@@ -11,9 +11,9 @@ const config: PlaywrightTestConfig = {
         toMatchSnapshot: { threshold: 0.2 },
     },
     webServer: {
-        command: 'yarn test-serve',
+        command: 'corepack yarn test-serve',
         url: 'http://127.0.0.1:3000/home.html',
-        reuseExistingServer: !process.env.CI,
+        reuseExistingServer: false,
         timeout: 60000,
     },
 }

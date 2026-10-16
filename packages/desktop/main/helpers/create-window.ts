@@ -21,7 +21,7 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
     const getCurrentPosition = () => {
         win.removeMenu()
         const position = win.getPosition()
-        const size = win.getSize()
+        const size = options.useContentSize ? win.getContentSize() : win.getSize()
         return {
             x: position[0],
             y: position[1],
@@ -76,6 +76,7 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
             // contextIsolation: false,
             nodeIntegration: false,
             contextIsolation: true,
+            backgroundThrottling: false,
             enableBlinkFeatures: '',
             sandbox: false,
             preload: path.join(__dirname, 'preload.js'),

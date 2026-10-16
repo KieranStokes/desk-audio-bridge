@@ -1,6 +1,6 @@
-appId: com.unknownskl.greenlight
-productName: Greenlight
-copyright: Copyright © 2021-2024 UnknownSKL
+appId: com.xboxaudiobridge.desktop
+productName: Desk Audio Bridge
+copyright: Copyright © 2019 UnknownSKL and Desk Audio Bridge contributors
 
 directories:
   output: dist
@@ -11,54 +11,38 @@ files:
     filter:
       - package.json
       - app
-publish:
-- github
+      - '!app/images{,/**/*}'
+      - '!app/achievements{,/**/*}'
+      - '!app/profile{,/**/*}'
+      - '!app/settings{,/**/*}'
+      - '!app/stream{,/**/*}'
+      - '!app/xcloud{,/**/*}'
 
+extraResources:
+  - from: resources/icon.ico
+    to: icon.ico
+  - from: ../../LICENSE
+    to: LICENSE-GREENLIGHT.txt
+  - from: ../../THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  - from: resources/legal
+    to: legal
 
-# Mac OS configuration
-mac:
-  category: public.app-category.games
-  # icon: "src/app/assets/images/icon.icns"
-  target: 
-  - target: dmg
-    arch: 
-    - universal
+beforePack: ./scripts/prepare-release.cjs
+afterPack: ./scripts/verify-packaged-licenses.cjs
 
-# Config for OSX dmg
-dmg:
-  contents:
-    - x: 130
-      y: 220
-    - x: 410
-      y: 220
-      type: "link"
-      path: "/Applications"
-
-# Windows configuration
 win:
-  # icon: "src/app/assets/images/icon.ico"
+  icon: resources/icon.ico
+  # Resource editing is handled by our Windows-only afterPack hook. This avoids
+  # the legacy signing-tool archive's unrelated privileged macOS symlinks.
+  signAndEditExecutable: false
   target:
-    - "zip"
-    - "nsis"
+    - nsis
 
-# Config for the windows installer
 nsis:
-  oneClick: true
-  perMachine: true
-
-# Linux configuration
-linux:
-  category: Game
-  target:
-    - "AppImage"
-    # - "flatpak"
-    - "deb"
-    # - "pacman"
-
-# flatpak:
-#   runtime: org.freedesktop.Platform
-#   runtimeVersion: 21.08
-
-#   sdk: org.freedesktop.Sdk
-#   base: org.electronjs.Electron2.BaseApp
-#   baseVersion: 21.08
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

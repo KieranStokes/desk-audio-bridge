@@ -1,0 +1,15 @@
+{
+  "packageCount": 109,
+  "missingText": [],
+  "unreviewed": [],
+  "supplementalNotices": [
+    "@next/env@16.2.6",
+    "agent-base@6.0.2",
+    "client-only@0.0.1",
+    "https-proxy-agent@5.0.1",
+    "microseconds@0.2.0",
+    "nano-time@1.0.0",
+    "type-fest@2.19.0",
+    "xbox-xcloud-player@0.2.11"
+  ]
+}

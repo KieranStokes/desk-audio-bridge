@@ -1,4 +1,6 @@
 module.exports = {
+  // Export only the audio utility, retaining upstream gaming pages as source references.
+  pageExtensions: ['bridge.tsx'],
   turbopack: {},
   
   webpack: (config, { isServer }) => {

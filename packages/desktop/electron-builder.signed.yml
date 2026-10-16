@@ -1,0 +1,7 @@
+extends: ./electron-builder.yml
+forceCodeSigning: true
+win:
+  signAndEditExecutable: true
+  signtoolOptions:
+    signingHashAlgorithms:
+      - sha256

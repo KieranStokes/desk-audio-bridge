@@ -23,29 +23,6 @@ export default class IpcSettings extends IpcBase {
         })
     }
 
-    getWebUIStatus(){
-        return new Promise((resolve) => {
-            resolve((this._application._webUI._express ? true : false))
-        })
-    }
-
-    startWebUI(){
-        return new Promise((resolve) => {
-            const rawSettings = this._application._store.get('settings', defaultSettings) as object
-            const settings = {...defaultSettings, ...rawSettings}
-            this._application._webUI.startServer(settings.webui_port)
-            resolve(true)
-        })
-    }
-
-
-    stopWebUI(){
-        return new Promise((resolve) => {
-            this._application._webUI.stopServer()
-            resolve(false)
-        })
-    }
-
     setLowResolution(){
         return new Promise((resolve) => {
             

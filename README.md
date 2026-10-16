@@ -1,3 +1,44 @@
+# Desk Audio Bridge
+
+A small Windows tray utility for hearing your Xbox console through your PC's audio output while using Discord or other PC apps. Independent software, based on Greenlight by UnknownSKL (Jim Kroon) and contributors. Not affiliated with or endorsed by Microsoft.
+
+## What it does
+
+- Receives home Remote Play audio, with persistent volume, mute, and output selection.
+- Starts in the tray after setup and waits for the selected console to be on; it does not wake the console.
+- Keeps the physical controller paired directly to the console and forwards no controller input.
+- Briefly attaches and immediately detaches the fourth remote-controller slot to satisfy the Xbox stream's startup handshake. A completely controller-free startup currently times out after roughly 60 seconds. Some games may still react to this handshake.
+
+## Install and use
+
+[Download the Windows installer and release notes](https://github.com/KieranStokes/desk-audio-bridge/releases/latest). This is an unsigned beta; Windows may show an Unknown Publisher or SmartScreen warning. Only install a copy you trust. Checksums are provided with each release.
+
+Run the Desk Audio Bridge installer, sign in through Microsoft's website, and select your console. The password is entered only on Microsoft's site. Saved sign-in tokens are encrypted using Windows credential protection. Closing the window keeps audio running; use **Quit app** or the tray's **Quit** command to exit fully.
+
+The application is compatible with Xbox One and Xbox Series consoles configured for Remote Play. Xbox must be powered on for an automatic connection. Each person uses their own Microsoft account; installers contain no account or console configuration.
+
+## Development and distribution
+
+Use Corepack and the pinned Yarn 1.22.22 version:
+
+```powershell
+corepack yarn install --frozen-lockfile
+corepack yarn desktop dev
+corepack yarn desktop build
+corepack yarn workspace xbox-audio-bridge verify:release
+```
+
+The build generates the original icon and dependency notices and checks every packaged Node dependency against the license inventory. See [RELEASING.md](RELEASING.md) for verification and signing. Local unsigned builds may display Windows publisher warnings.
+
+The internal application ID and profile/package name retain their earlier identifiers so existing installations upgrade without discarding sign-in or settings. The visible product, icon, tray, and installer use Desk Audio Bridge.
+
+## License and attribution
+
+This fork is distributed under the [MIT License](LICENSE). Greenlight's full copyright notice is retained. Dependency license text, version inventory, and supplementary notice provenance are included in the installer and accessible through **About & licenses**. Microsoft and Xbox are trademarks of the Microsoft group of companies.
+
+<details>
+<summary>Original upstream Greenlight README (historical reference)</summary>
+
 # Greenlight
 
 [![Build/Desktop](https://github.com/unknownskl/greenlight/actions/workflows/build_desktop.yml/badge.svg)](https://github.com/unknownskl/greenlight/actions/workflows/build_desktop.yml)
@@ -111,3 +152,5 @@ Want to help out with new translations? Help us on [https://poeditor.com/join/pr
 ## Changelog
 
 See [changelog](https://unknownskl.github.io/greenlight/docs/desktop/changelog).
+
+</details>

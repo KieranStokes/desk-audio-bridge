@@ -1,0 +1,12 @@
+diff --git a/node_modules/xal-node/package.json b/node_modules/xal-node/package.json
+index f62c513..7432c61 100644
+--- a/node_modules/xal-node/package.json
++++ b/node_modules/xal-node/package.json
+@@ -37,7 +37,6 @@
+   "dependencies": {
+     "commander": "^13.0.0",
+     "jose": "^5.10.0",
+-    "npm": "^11.15.0",
+     "uuid": "^14.0.0"
+   }
+ }

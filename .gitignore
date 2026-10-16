@@ -5,3 +5,14 @@ packages/docs/out
 packages/docs/.source
 dist/
 packages/pages/public
+*.pfx
+*.p12
+*.cer
+.env
+packages/desktop/test-results/
+.DS_Store
+.env.*
+!.env.example
+*.log
+*.key
+*.pem

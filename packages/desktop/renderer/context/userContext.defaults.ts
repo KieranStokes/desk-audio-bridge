@@ -1,4 +1,12 @@
 export const defaultSettings = {
+    selectedConsoleId: '',
+    selectedConsoleName: '',
+    volume: 0.5,
+    muted: false,
+    outputDeviceId: '',
+    launchAtLogin: true,
+    autoConnect: true,
+    setupComplete: false,
     xhome_bitrate: 0,
     xcloud_bitrate: 0,
     video_profiles: [],

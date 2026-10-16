@@ -1,0 +1,7 @@
+{
+  "name": "Desk Audio Bridge",
+  "tagline": "Console audio at your desk",
+  "description": "An independent audio utility compatible with Xbox Remote Play.",
+  "disclaimer": "Unofficial software. Not endorsed by Microsoft.",
+  "icon": "brand.svg"
+}

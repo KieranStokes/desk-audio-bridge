@@ -62,24 +62,21 @@ export default class StreamManager {
         })
     }
 
-    stopStream(sessionId){
-        return new Promise((resolve, reject) => {
-            const session = this.getSession(sessionId)
-            if(session === undefined){
-                reject('Session not found: '+sessionId)
+    async stopStream(sessionId){
+        const session = this.getSession(sessionId)
+        if(session === undefined)
+            throw new Error('Session not found: '+sessionId)
+
+        // Xbox commonly removes an AFK session before our DELETE reaches it.
+        // Retaining that dead local record poisons later cleanup and shutdown.
+        delete this._sessions[sessionId]
+        try {
+            return await this.getApi(session.type).stopStream(sessionId)
+        } catch(error) {
+            if(error?.status === 404 || error?.status === 410)
                 return
-            }
-
-            this.getApi(session.type).stopStream(sessionId).then((result) => {
-                console.log('Current sessions:', this._sessions)
-                delete this._sessions[sessionId]
-                console.log('new sessions:', this._sessions)
-
-                resolve(result)
-            }).catch((error) => {
-                reject(error)
-            })
-        })
+            throw error
+        }
     }
 
     sendSdp(sessionId:string, sdp:any){

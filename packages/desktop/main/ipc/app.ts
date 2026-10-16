@@ -1,6 +1,7 @@
 import IpcBase from './base'
 import { session } from 'electron'
 import electron from 'electron'
+import AuthTokenStore from '../helpers/tokenstore'
 
 interface setForceRegionIpArgs {
     ip:string;
@@ -42,6 +43,9 @@ export default class IpcApp extends IpcBase {
                 isAuthenticating: this._application._authentication._isAuthenticating,
                 isAuthenticated: this._application._authentication._isAuthenticated,
                 user: this.getUserState(),
+                prompt: this._application._authentication._authPrompt,
+                error: this._application._authentication._authError,
+                tokenProtectionAvailable: this._application._authentication._tokenStore.isProtectionAvailable(),
             })
         })
     }
@@ -53,13 +57,48 @@ export default class IpcApp extends IpcBase {
         })
     }
 
+    openAuthPage(){
+        return this._application._authentication.openAuthPage().then(() => true)
+    }
+
+    copyAuthCode(){
+        return Promise.resolve(this._application._authentication.copyAuthCode())
+    }
+
+    testTokenProtection(){
+        if(process.env.CI === undefined)
+            return Promise.reject(new Error('Token protection self-test is available only in isolated CI profiles.'))
+
+        const legacyPayload = JSON.stringify({jwtKeys: {migrationProbe: 'private-probe-value'}})
+        this._application._store.set('user.tokenstore', legacyPayload)
+        const migrator = new AuthTokenStore()
+        const migrated = migrator.load()
+        const encryptedValue = this._application._store.get('user.tokenstoreEncrypted', '') as string
+        const legacyRemoved = !this._application._store.has('user.tokenstore')
+        const reader = new AuthTokenStore()
+        const reloaded = reader.load()
+        const result = {
+            migrated,
+            migrationStatus: migrator.getLastLoadResult().status,
+            encryptedValuePresent: encryptedValue.length > 0,
+            plaintextAbsent: !encryptedValue.includes('private-probe-value'),
+            legacyRemoved,
+            reloaded,
+            reloadStatus: reader.getLastLoadResult().status,
+            decryptedValueMatches: reader._jwtKeys?.migrationProbe === 'private-probe-value',
+        }
+        reader.clear()
+        return Promise.resolve(result)
+    }
+
     quit(){
-        return new Promise<boolean>((resolve) => {
-            resolve(true)
-            setTimeout(() => {
-                this._application.quit()
-            }, 100)
-        })
+        this._application.writeBridgeLog('app.quit-ipc-requested')
+        setImmediate(() => this._application.quit())
+        return Promise.resolve(true)
+    }
+
+    showAbout(){
+        return this._application.showAbout()
     }
 
     restart(){
@@ -140,7 +179,7 @@ export default class IpcApp extends IpcBase {
     async debug(){
         const returnValue = []
 
-        const gpuInfo = await electron.app.getGPUInfo('complete')
+        const gpuInfo:any = await electron.app.getGPUInfo('complete')
 
         // Application Values
         returnValue.push({

@@ -1,0 +1,2061 @@
+{
+  "packages": [
+    {
+      "name": "@babel/runtime-corejs3",
+      "version": "7.29.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/babel/babel.git",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/babel/babel.git",
+      "author": "The Babel Team (https://babel.dev/team)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "name": "@next/env",
+      "version": "16.2.6",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/vercel/next.js",
+      "author": "Next.js Team <support@vercel.com>",
+      "declaration": {
+        "source": "https://github.com/vercel/next.js/tree/v16.2.6",
+        "relatedLicense": "next/license.md",
+        "note": "This package is part of Next.js; preserve the monorepo's MIT license from the same installed release."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "d680d8df492bb43fb6d11a192b9e12b16fe1175148da8b11cc3f3faf3ba15aa0"
+        }
+      ]
+    },
+    {
+      "name": "@swc/helpers",
+      "version": "0.5.15",
+      "license": "Apache-2.0",
+      "selectedLicense": "Apache-2.0",
+      "repository": "git+https://github.com/swc-project/swc.git",
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91"
+        }
+      ]
+    },
+    {
+      "name": "agent-base",
+      "version": "6.0.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/TooTallNate/node-agent-base.git",
+      "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
+      "declaration": {
+        "source": "https://registry.npmjs.org/agent-base/6.0.2",
+        "commit": "c4b8ea2e1a11bae023bb09b708050a50418204e9",
+        "note": "Published package declares MIT but does not supply a standalone license notice. Author attribution and standard license terms are reproduced; no copyright year has been invented."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "269dd407983bfc4d6cb9f855ff6e69aec0f04c63e175df23b85576f97d4fe45e"
+        }
+      ]
+    },
+    {
+      "name": "ajv-formats",
+      "version": "2.1.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ajv-validator/ajv-formats.git",
+      "author": "Evgeny Poberezkin",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf"
+        }
+      ]
+    },
+    {
+      "name": "ajv",
+      "version": "8.20.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "ajv-validator/ajv",
+      "author": "Evgeny Poberezkin",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3"
+        }
+      ]
+    },
+    {
+      "name": "asynckit",
+      "version": "0.4.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/alexindigo/asynckit.git",
+      "author": "Alex Indigo <iam@alexindigo.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "1953150d5d4b10c7542cee6f6e0c613b2682545233f069d75cfff1936386ce10"
+        }
+      ]
+    },
+    {
+      "name": "atomically",
+      "version": "1.7.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/fabiospampinato/atomically.git",
+      "author": "Fabio Spampinato",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "716bd9213ef82d9017ed813688703837aaa99fc56de205a7b97475d40056a500"
+        }
+      ]
+    },
+    {
+      "name": "axios",
+      "version": "1.16.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/axios/axios.git",
+      "author": "Matt Zabriskie",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "82761059eaedacb3356803aea8a170d8298609f91b14fc32ee1bfb40d690183c"
+        }
+      ]
+    },
+    {
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/juliangruber/balanced-match.git",
+      "author": "Julian Gruber",
+      "files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "a1bd5deadb6a06dd74efa852c1b8b23f63b67f2214fbe9c8bd591da51da69268"
+        }
+      ]
+    },
+    {
+      "name": "baseline-browser-mapping",
+      "version": "2.10.30",
+      "license": "Apache-2.0",
+      "selectedLicense": "Apache-2.0",
+      "repository": "git+https://github.com/web-platform-dx/baseline-browser-mapping.git",
+      "files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "big-integer",
+      "version": "1.6.52",
+      "license": "Unlicense",
+      "selectedLicense": "Unlicense",
+      "repository": "git@github.com:peterolson/BigInteger.js.git",
+      "author": "Peter Olson <peter.e.c.olson+npm@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "e9b0e94f628e00b5ed98046cfa041696ff89eebbbdd54108ee350625bc6d0363"
+        }
+      ]
+    },
+    {
+      "name": "brace-expansion",
+      "version": "1.1.14",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/juliangruber/brace-expansion.git",
+      "author": "Julian Gruber",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "68f12f6e2c33688699249c01d8f9623c534da20aa71989c57b061b7bc1676d14"
+        }
+      ]
+    },
+    {
+      "name": "broadcast-channel",
+      "version": "3.7.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/pubkey/broadcast-channel.git",
+      "author": "pubkey",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "99a490d340cc891de5082ceffef28d23b126751a1f11f8f4c17f82cd803edd6f"
+        }
+      ]
+    },
+    {
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/call-bind-apply-helpers.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        }
+      ]
+    },
+    {
+      "name": "caniuse-lite",
+      "version": "1.0.30001793",
+      "license": "CC-BY-4.0",
+      "selectedLicense": "CC-BY-4.0",
+      "repository": "browserslist/caniuse-lite",
+      "author": "Ben Briggs",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "fd3a263fe19ed8faa9068b43abaebafc02c77897b0c6fc09abc04bb592e5f16e"
+        }
+      ]
+    },
+    {
+      "name": "client-only",
+      "version": "0.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "declaration": {
+        "source": "https://registry.npmjs.org/client-only/0.0.1",
+        "relatedLicense": "react/LICENSE",
+        "note": "React marker package; its manifest declares MIT and points to facebook/react. Preserve React's project license."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "349a24f5e06cafe485acfeba7c1c6bd25e2e802e083e2fac477597007df12c15"
+        }
+      ]
+    },
+    {
+      "name": "combined-stream",
+      "version": "1.0.8",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/felixge/node-combined-stream.git",
+      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+      "files": [
+        {
+          "name": "License",
+          "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+        }
+      ]
+    },
+    {
+      "name": "commander",
+      "version": "13.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/tj/commander.js.git",
+      "author": "TJ Holowaychuk <tj@vision-media.ca>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04512a63dce4d2d506ad612dc0bd7681ccf6e3655f7b6eaef7dfac8323d1ec0b"
+        }
+      ]
+    },
+    {
+      "name": "concat-map",
+      "version": "0.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/substack/node-concat-map.git",
+      "author": "James Halliday",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b"
+        }
+      ]
+    },
+    {
+      "name": "conf",
+      "version": "10.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/conf",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "core-js-pure",
+      "version": "3.49.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/zloirock/core-js.git",
+      "author": "Denis Pushkarev",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b87653fff2d44426ab5cd4723cee3b1364dc8d35a0acdf098c54689543123bf8"
+        }
+      ]
+    },
+    {
+      "name": "debounce-fn",
+      "version": "4.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/debounce-fn",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/debug-js/debug.git",
+      "author": "Josh Junon (https://github.com/qix-)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+        }
+      ]
+    },
+    {
+      "name": "delayed-stream",
+      "version": "1.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/felixge/node-delayed-stream.git",
+      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+      "files": [
+        {
+          "name": "License",
+          "sha256": "47eb8ca82c798246774946d1be0f9aa08f025fa8325ced0947aeeb4c05fe5547"
+        }
+      ]
+    },
+    {
+      "name": "detect-node",
+      "version": "2.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/iliakan/detect-node",
+      "author": "Ilya Kantor",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "54b32293ea560d22cd9b62af9b2cda1a030d910a48c6601d227c5ff2338d95f8"
+        }
+      ]
+    },
+    {
+      "name": "dot-prop",
+      "version": "6.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/dot-prop",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "dotenv",
+      "version": "16.6.1",
+      "license": "BSD-2-Clause",
+      "selectedLicense": "BSD-2-Clause",
+      "repository": "git://github.com/motdotla/dotenv.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "74b629b24865e1e83c5277ee84590b7937644d6fd959d0c7bdce758676cd2ced"
+        }
+      ]
+    },
+    {
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/es-shims/dunder-proto.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+        }
+      ]
+    },
+    {
+      "name": "electron-serve",
+      "version": "3.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/electron-serve",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "electron-store",
+      "version": "8.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/electron-store",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "env-paths",
+      "version": "2.2.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/env-paths",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/es-define-property.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        }
+      ]
+    },
+    {
+      "name": "es-errors",
+      "version": "1.3.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/es-errors.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        }
+      ]
+    },
+    {
+      "name": "es-object-atoms",
+      "version": "1.1.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/es-object-atoms.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+        }
+      ]
+    },
+    {
+      "name": "es-set-tostringtag",
+      "version": "2.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/es-shims/es-set-tostringtag.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "1a3aeb1f1398bd697d57c3c585faadf59d825aca6e3162cd7eeb72ff76eb2466"
+        }
+      ]
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/epoberezkin/fast-deep-equal.git",
+      "author": "Evgeny Poberezkin",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+        }
+      ]
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.2",
+      "license": "BSD-3-Clause",
+      "selectedLicense": "BSD-3-Clause",
+      "repository": "git+https://github.com/fastify/fast-uri.git",
+      "author": "Vincent Le Goff <vince.legoff@gmail.com> (https://github.com/zekth)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786"
+        }
+      ]
+    },
+    {
+      "name": "find-up",
+      "version": "3.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/find-up",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "follow-redirects",
+      "version": "1.16.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+ssh://git@github.com/follow-redirects/follow-redirects.git",
+      "author": "Ruben Verborgh <ruben@verborgh.org> (https://ruben.verborgh.org/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bfa8a54bb952ccda79f0f1889721d108f5b605babbb2b8a3705ffb52f4132eb7"
+        }
+      ]
+    },
+    {
+      "name": "form-data",
+      "version": "4.0.5",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/form-data/form-data.git",
+      "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+      "files": [
+        {
+          "name": "License",
+          "sha256": "e5b780d4f38d1d3328e3e53186c4e62d3fa149ea6f2bacd5de5ad0c30ac85343"
+        }
+      ]
+    },
+    {
+      "name": "fs.realpath",
+      "version": "1.0.0",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git+https://github.com/isaacs/fs.realpath.git",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8465b04b67f473341171b5c9c8b2c741a4a395b3f6ed58339b3a4f4db3db7472"
+        }
+      ]
+    },
+    {
+      "name": "function-bind",
+      "version": "1.1.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/Raynos/function-bind.git",
+      "author": "Raynos <raynos2@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+        }
+      ]
+    },
+    {
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/get-intrinsic.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "39c5ec504cf6bd5cd782a7c695828e09189df79f5d94840e4f08feb97b9fd416"
+        }
+      ]
+    },
+    {
+      "name": "get-proto",
+      "version": "1.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/get-proto.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "be46ce1e3b0479af9ce82d22b465a6d7d2ff084fca0aaf3d54172da2b5eb5781"
+        }
+      ]
+    },
+    {
+      "name": "glob",
+      "version": "7.2.3",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git://github.com/isaacs/node-glob.git",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6236fa0b88a4a0cce3dda0367979491b2052b3c8d6b1c10b3668de083e86a7f0"
+        }
+      ]
+    },
+    {
+      "name": "gopd",
+      "version": "1.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/ljharb/gopd.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "d90bf0a089da4cf43d644ed240a0b3825dcdb705e64e38371d56995a4cc9e4c5"
+        }
+      ]
+    },
+    {
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/inspect-js/has-symbols.git",
+      "author": "Jordan Harband",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab"
+        }
+      ]
+    },
+    {
+      "name": "has-tostringtag",
+      "version": "1.0.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/inspect-js/has-tostringtag.git",
+      "author": "Jordan Harband",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "e2560e002e13281578c75c850061d9255c33d16d732939e8c2db64c2506642fa"
+        }
+      ]
+    },
+    {
+      "name": "hasown",
+      "version": "2.0.3",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/inspect-js/hasOwn.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bf9b0d665be2a689851eea667ca9f42066ea1d903b38349c51e6a44b2577680a"
+        }
+      ]
+    },
+    {
+      "name": "html-parse-stringify",
+      "version": "4.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/i18next/html-parse-stringify.git",
+      "author": "Henrik Joreteg <henrik@joreteg.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "3eb2802a4d0ea79f80977817451b056571dccd8373c9bf4e9be4b05f86afbf90"
+        }
+      ]
+    },
+    {
+      "name": "https-proxy-agent",
+      "version": "5.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/TooTallNate/node-https-proxy-agent.git",
+      "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
+      "declaration": {
+        "source": "https://registry.npmjs.org/https-proxy-agent/5.0.1",
+        "commit": "d0d80cc0482f20495aa8595f802e1a9f3b1b3409",
+        "note": "Published package declares MIT but does not supply a standalone license notice. Author attribution and standard license terms are reproduced; no copyright year has been invented."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "5ad9cb5b18226de6f04304de6ddb010f20cc9ff7fe56db6b10db5d72009ac83d"
+        }
+      ]
+    },
+    {
+      "name": "i18next",
+      "version": "25.10.10",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/i18next/i18next.git",
+      "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "def56080ea8d5d30d11771d221d1c9e98f3942afb8c61dd6136be5e806c926d6"
+        }
+      ]
+    },
+    {
+      "name": "inflight",
+      "version": "1.0.6",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "https://github.com/npm/inflight.git",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "05dc4d785ac3a488676d3ed10e901b75ad89dafcc63f8e66610fd4a39cc5c7e8"
+        }
+      ]
+    },
+    {
+      "name": "inherits",
+      "version": "2.0.4",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git://github.com/isaacs/inherits",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5ffe28e7ade7d8f10d85d5337a73fd793dac5c462fb9a28fbf8c5046c7fbca3b"
+        }
+      ]
+    },
+    {
+      "name": "ip-address",
+      "version": "10.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git://github.com/beaugunderson/ip-address.git",
+      "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "f8d791359a50cbcac82c29cb7b0b1b889b28be76fdd35b8ee33f0f7c8704702a"
+        }
+      ]
+    },
+    {
+      "name": "is-obj",
+      "version": "2.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/is-obj",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "jose",
+      "version": "5.10.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "panva/jose",
+      "author": "Filip Skokan <panva.ip@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "8078b0829d6c3e9ecde2f003e1966e4cad3efc6e7a640efbab0313cc166b1af1"
+        }
+      ]
+    },
+    {
+      "name": "js-sha3",
+      "version": "0.8.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/emn178/js-sha3.git",
+      "author": "Chen, Yi-Cyuan <emn178@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "17b4068b7283f1e9a41b196e3662d4b37cf6f3265173622929d352f5ecdda231"
+        }
+      ]
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/epoberezkin/json-schema-traverse.git",
+      "author": "Evgeny Poberezkin",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+        }
+      ]
+    },
+    {
+      "name": "json-schema-typed",
+      "version": "7.0.3",
+      "license": "BSD-2-Clause",
+      "selectedLicense": "BSD-2-Clause",
+      "repository": "https://github.com/typeslick/json-schema-typed.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "59992f12a42bfad11b6586e1bffda51749bb468847ca27c7070647462a66ed7b"
+        }
+      ]
+    },
+    {
+      "name": "locate-path",
+      "version": "3.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/locate-path",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "match-sorter",
+      "version": "6.4.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/kentcdodds/match-sorter",
+      "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bfa09d57d1de35570dfd7b14e1dc3f5af860728b76bdf79d8c50c5e505eef4f2"
+        }
+      ]
+    },
+    {
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/es-shims/math-intrinsics.git",
+      "author": "Jordan Harband <ljharb@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+        }
+      ]
+    },
+    {
+      "name": "microseconds",
+      "version": "0.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "github:kamicane/microseconds",
+      "author": "Valerio Proietti <kamicane@gmail.com>",
+      "declaration": {
+        "source": "https://registry.npmjs.org/microseconds/0.2.0",
+        "note": "Published package declares MIT but does not supply a standalone license notice. Author attribution and standard license terms are reproduced; no copyright year has been invented."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "9a798db3583d6e3666a2d26d32806537c3bcb381e74a94eb026d6e4c902c4565"
+        }
+      ]
+    },
+    {
+      "name": "mime-db",
+      "version": "1.52.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "jshttp/mime-db",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "cc1dfd4dafa27271e8212cd3b274eeb3f262e40a6fdab36ddc3f9696f706f58b"
+        }
+      ]
+    },
+    {
+      "name": "mime-types",
+      "version": "2.1.35",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "jshttp/mime-types",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "71f83c4c0621102a56d9853812777b85751bce7e9726f686f5b056c1f8a4b0e6"
+        }
+      ]
+    },
+    {
+      "name": "mimic-fn",
+      "version": "2.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/mimic-fn",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "mimic-fn",
+      "version": "3.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/mimic-fn",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "minimatch",
+      "version": "3.1.5",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git://github.com/isaacs/minimatch.git",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        }
+      ]
+    },
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "vercel/ms",
+      "files": [
+        {
+          "name": "license.md",
+          "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+        }
+      ]
+    },
+    {
+      "name": "nano-time",
+      "version": "1.0.0",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git+https://github.com/sazze/node-nanotime.git",
+      "author": "Kevin Smithson <ksmithson@sazze.com>",
+      "declaration": {
+        "source": "https://registry.npmjs.org/nano-time/1.0.0",
+        "commit": "bce149f50044a70798a3466d34e4a0feb5e1a876",
+        "note": "Published package declares ISC but does not supply a standalone license notice. Author attribution and standard license terms are reproduced; no copyright year has been invented."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "3bea6a0559d4343de5315412a031f250d859b3ce2d8ef7b12db043f2f510a0c1"
+        }
+      ]
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.12",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "ai/nanoid",
+      "author": "Andrey Sitnik <andrey@sitnik.ru>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        }
+      ]
+    },
+    {
+      "name": "next",
+      "version": "16.2.6",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "vercel/next.js",
+      "files": [
+        {
+          "name": "dist/compiled/@babel/runtime/LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "name": "dist/compiled/@hapi/accept/LICENSE",
+          "sha256": "ff96bbd6a7408c166f16dbed7f2c87a8061e5a21289ec8f2d3069f8d3b15fc0a"
+        },
+        {
+          "name": "dist/compiled/@mswjs/interceptors/ClientRequest/LICENSE",
+          "sha256": "bb3a5cb8fb224f632970e31425348f556f7a83b165d5384ea5e142575f5c412e"
+        },
+        {
+          "name": "dist/compiled/@napi-rs/triples/LICENSE",
+          "sha256": "7b34e99bc43641767fded49f7f03563ffd50c689b1f3b0d50700b4727bc4ae24"
+        },
+        {
+          "name": "dist/compiled/@opentelemetry/api/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "name": "dist/compiled/@vercel/nft/LICENSE",
+          "sha256": "0b31f3a6ab66b272b7de451df39835f310a309a06b1a8aafb3a2fdab20adc166"
+        },
+        {
+          "name": "dist/compiled/@vercel/og/LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        },
+        {
+          "name": "dist/compiled/@vercel/og/satori/LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        },
+        {
+          "name": "dist/compiled/@vercel/routing-utils/LICENSE",
+          "sha256": "b070d77bfb2c52a1dd6996de0ce5f64c49a0ca55c889b163a963ddf5cb001ee2"
+        },
+        {
+          "name": "dist/compiled/acorn/LICENSE",
+          "sha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7"
+        },
+        {
+          "name": "dist/compiled/anser/LICENSE",
+          "sha256": "6d2abc90a426cf65bbf84f7cedf9487f7ff86a3daf0e130b335a45c112f040d0"
+        },
+        {
+          "name": "dist/compiled/assert/LICENSE",
+          "sha256": "6239c6144c31e58cf925c34483606969c555574d64ffa96518ab5d7f45c75d43"
+        },
+        {
+          "name": "dist/compiled/async-retry/LICENSE",
+          "sha256": "8cec82f7beeab8459fa6165c973f5cd6f89aceea7a07de0aa8fc30a9dd339a05"
+        },
+        {
+          "name": "dist/compiled/async-sema/LICENSE",
+          "sha256": "291ff3e2bd22891edef553930da53ba64adf79d83f0bd1c5b7f6fe9727526b37"
+        },
+        {
+          "name": "dist/compiled/babel/LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        },
+        {
+          "name": "dist/compiled/browserify-zlib/LICENSE",
+          "sha256": "ddd770379e07bf0574dfaa4485be80a23b3248b36d09f33ec79276c09b829daf"
+        },
+        {
+          "name": "dist/compiled/browserslist/LICENSE",
+          "sha256": "f25bf9bf3ae8984bcd43bf7fb8f78e7eec8d577081fb8d0989cfa7c67ecebb8e"
+        },
+        {
+          "name": "dist/compiled/buffer/LICENSE",
+          "sha256": "06bafa45fdad2579ba0e43b0c9b2c6290287c99c4203c300254a462b38a307f6"
+        },
+        {
+          "name": "dist/compiled/busboy/LICENSE",
+          "sha256": "d06b5d27bbbbe22c36b1fd88406b1208876e2d37d795f5b8eaed951a459a3111"
+        },
+        {
+          "name": "dist/compiled/bytes/LICENSE",
+          "sha256": "e3b44af066615de2ea48d18d852d0762f18c0b2efcea714fa48a6f729d405b85"
+        },
+        {
+          "name": "dist/compiled/ci-info/LICENSE",
+          "sha256": "25bd22427e27b0d3f1c3da2670bb44b622bcced22ebdf4777d5488ac129370a1"
+        },
+        {
+          "name": "dist/compiled/cli-select/LICENSE",
+          "sha256": "a8e260b5b60eb27746ff2c5967489e6878c5a6ba99400cbec84c89a9b49a46ca"
+        },
+        {
+          "name": "dist/compiled/commander/LICENSE",
+          "sha256": "04512a63dce4d2d506ad612dc0bd7681ccf6e3655f7b6eaef7dfac8323d1ec0b"
+        },
+        {
+          "name": "dist/compiled/comment-json/LICENSE",
+          "sha256": "9dbd86998d3cdafc1d8c298aea636146568d05d429b81386e60cfce11e6cedb6"
+        },
+        {
+          "name": "dist/compiled/compression/LICENSE",
+          "sha256": "23d466b1b134b415b66fa50c6526b4cf3e7b9258554da88d3abb371721e7ce68"
+        },
+        {
+          "name": "dist/compiled/conf/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/content-disposition/LICENSE",
+          "sha256": "bd47ce7b88c7759630d1e2b9fcfa170a0f1fde522be09e13fb1581a79d090400"
+        },
+        {
+          "name": "dist/compiled/content-type/LICENSE",
+          "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38"
+        },
+        {
+          "name": "dist/compiled/cookie/LICENSE",
+          "sha256": "c02110eedc16c7114f1a9bdc026c65626ce1d9c7e27fd51a8e0feee8a48a6858"
+        },
+        {
+          "name": "dist/compiled/cross-spawn/LICENSE",
+          "sha256": "aaa78451b6fecd1b9c4594c796c133c0e90cad100372ff8bc6de615e9ef9adf1"
+        },
+        {
+          "name": "dist/compiled/crypto-browserify/LICENSE",
+          "sha256": "6134c69bc22c8289252e70de3af20bd67071233459055be74d83acfcc4865e7e"
+        },
+        {
+          "name": "dist/compiled/debug/LICENSE",
+          "sha256": "98c970de440dcfc77471610aec2377c9d9b0db2b3be6d1add524a586e1d7f422"
+        },
+        {
+          "name": "dist/compiled/devalue/LICENSE",
+          "sha256": "e399db7e952e45cae84f1b53d72ba8dbad2daaa7ab8cd1f0ab72fea5ab73b225"
+        },
+        {
+          "name": "dist/compiled/domain-browser/LICENSE",
+          "sha256": "fc06db8dd5e7840db84ab328d9f58bdb91a56fbbf045bb977c11fcd07e2d8e3e"
+        },
+        {
+          "name": "dist/compiled/edge-runtime/LICENSE",
+          "sha256": "e4f76a7a19ef2989dd79339bd3abf8afcf1d6f065e5a10c76c19415ffd727eb3"
+        },
+        {
+          "name": "dist/compiled/events/LICENSE",
+          "sha256": "631987b7616a325a5b97566c232418481ddf7dbb5ecadefb991e791876cc2599"
+        },
+        {
+          "name": "dist/compiled/find-up/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/fresh/LICENSE",
+          "sha256": "a0ec0dab16b3666f24950f86d257930ac2ad475557b4bfe245620e0817d8a45d"
+        },
+        {
+          "name": "dist/compiled/glob/LICENSE",
+          "sha256": "6236fa0b88a4a0cce3dda0367979491b2052b3c8d6b1c10b3668de083e86a7f0"
+        },
+        {
+          "name": "dist/compiled/gzip-size/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/http-proxy/LICENSE",
+          "sha256": "589850dfc0a1d39a97c592d618d5772f84aec2b11c6898e020acb985299f3bab"
+        },
+        {
+          "name": "dist/compiled/https-browserify/LICENSE",
+          "sha256": "ff151c00207c908581639851dd8504ce4255be0650b2b236edec2aa90342b0cd"
+        },
+        {
+          "name": "dist/compiled/icss-utils/LICENSE",
+          "sha256": "b2b54c738525e98cc42d4a1c239c9d8421507816acce98950e81d0943daae68e"
+        },
+        {
+          "name": "dist/compiled/ignore-loader/LICENSE",
+          "sha256": "62ba766e9b50f9b175b0229f4ea03e93730c9180408acec50dd617e9ae1fa059"
+        },
+        {
+          "name": "dist/compiled/image-size/LICENSE",
+          "sha256": "3109783dad7527b490aabc49c3cb148573c19b41b843e70cf9388a93f3d7fccd"
+        },
+        {
+          "name": "dist/compiled/ipaddr.js/LICENSE",
+          "sha256": "62568a2d1337b77171ecca9db10579163446de1ba6151678e81f06cdc199971b"
+        },
+        {
+          "name": "dist/compiled/is-animated/LICENSE",
+          "sha256": "e08c030e1274fadc495c71e0489612f0c74673b69ae8e41460526c233a94a728"
+        },
+        {
+          "name": "dist/compiled/is-docker/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/is-wsl/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/jest-worker/LICENSE",
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        },
+        {
+          "name": "dist/compiled/json5/LICENSE",
+          "sha256": "53e59feb13058722d977c699eb0407c7bce2f93c949b681bbd2ff31698535927"
+        },
+        {
+          "name": "dist/compiled/jsonwebtoken/LICENSE",
+          "sha256": "2144eb6894cb440fde6b2b3aaae3b617c8f1dc9bb19813079dcf62ec6c517042"
+        },
+        {
+          "name": "dist/compiled/loader-runner/LICENSE",
+          "sha256": "498d39c83164cf8de195090f5564fc0308ab271344ca2f95484a7f1020952d00"
+        },
+        {
+          "name": "dist/compiled/loader-utils2/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/loader-utils3/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/lodash.curry/LICENSE",
+          "sha256": "ffd8b33b354585f4ce119f19c53728281e48a97b074491eb6bf6d5c5ff305272"
+        },
+        {
+          "name": "dist/compiled/lru-cache/LICENSE",
+          "sha256": "451ec07eeb9c4e1b86de9abdaa426462a8be48f887ec7421cf0bbb9c769555ab"
+        },
+        {
+          "name": "dist/compiled/mini-css-extract-plugin/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/nanoid/LICENSE",
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        },
+        {
+          "name": "dist/compiled/native-url/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "name": "dist/compiled/neo-async/LICENSE",
+          "sha256": "811238ba7d85f6fe6b820703a32f92705bcf77bc352ddc3476783491c64a129a"
+        },
+        {
+          "name": "dist/compiled/node-html-parser/LICENSE",
+          "sha256": "ea75e9321945b7f0bc4644da1e404ad76ce55e9bc05cae3b2f5f2d973aede83b"
+        },
+        {
+          "name": "dist/compiled/ora/LICENSE",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "name": "dist/compiled/os-browserify/LICENSE",
+          "sha256": "d25d1d6d28c35cb6f358e2833e405c4e53fec2fa24d156323ddea5cd438d3407"
+        },
+        {
+          "name": "dist/compiled/p-limit/LICENSE",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "name": "dist/compiled/p-queue/LICENSE",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        },
+        {
+          "name": "dist/compiled/path-browserify/LICENSE",
+          "sha256": "a22b9d5763f574e5db347c30acc0b33eaf4846767c03d2e27d012e864e79a824"
+        },
+        {
+          "name": "dist/compiled/path-to-regexp/LICENSE",
+          "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25"
+        },
+        {
+          "name": "dist/compiled/picomatch/LICENSE",
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        },
+        {
+          "name": "dist/compiled/postcss-flexbugs-fixes/LICENSE",
+          "sha256": "f26c92c1c16e78c6b1f7474792f7195b7abc851caccb4a73dcc5b3c31efc7321"
+        },
+        {
+          "name": "dist/compiled/postcss-modules-extract-imports/LICENSE",
+          "sha256": "9e534cfb7f7ae1300e16fe1ee7d203fdfe707dc932429c37246f747c3699ee14"
+        },
+        {
+          "name": "dist/compiled/postcss-modules-local-by-default/LICENSE",
+          "sha256": "dd40f37957ddcb6a6157f40b677d6f43697583f956144fbce25443e35630453e"
+        },
+        {
+          "name": "dist/compiled/postcss-modules-scope/LICENSE",
+          "sha256": "7774c8c4a3f750b294b416818062201a404fc2d6c8756d8b89a1688e24b5d5a7"
+        },
+        {
+          "name": "dist/compiled/postcss-modules-values/LICENSE",
+          "sha256": "655287aefbf8e292057318c385d77767b1dd9819c87709fd26730b7090efe4d9"
+        },
+        {
+          "name": "dist/compiled/postcss-preset-env/LICENSE",
+          "sha256": "597756adcb51f243ef4fb386920377f61d012ace0904364e1a8ee9aaec6afc84"
+        },
+        {
+          "name": "dist/compiled/postcss-safe-parser/LICENSE",
+          "sha256": "c4630ac8b89cb317ac5bdd60ac5e4e185eab9bd5151a0c7b3afa41aa83d7ec9b"
+        },
+        {
+          "name": "dist/compiled/postcss-scss/LICENSE",
+          "sha256": "c4630ac8b89cb317ac5bdd60ac5e4e185eab9bd5151a0c7b3afa41aa83d7ec9b"
+        },
+        {
+          "name": "dist/compiled/postcss-value-parser/LICENSE",
+          "sha256": "3687447039151857a6ba378db062172c7f33d4aa70a615c87a43a9c50e990485"
+        },
+        {
+          "name": "dist/compiled/process/LICENSE",
+          "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+        },
+        {
+          "name": "dist/compiled/querystring-es3/LICENSE",
+          "sha256": "cb72d9714ddc21e758d63f423be0caddf909d23ccbb10a2f5201a870818e4f57"
+        },
+        {
+          "name": "dist/compiled/raw-body/LICENSE",
+          "sha256": "c8e6bca7230689d536a3bd7158f66e9c4f89f95d0748743a0370ac229e9023ad"
+        },
+        {
+          "name": "dist/compiled/react/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-dom/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-dom-experimental/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-experimental/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-is/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-refresh/LICENSE",
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        },
+        {
+          "name": "dist/compiled/react-server-dom-turbopack/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-server-dom-turbopack-experimental/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-server-dom-webpack/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/react-server-dom-webpack-experimental/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/regenerator-runtime/LICENSE",
+          "sha256": "51887a3d47051ac2fce1210562e5b9fe0830a8a8fabeb272c2d586eeb18a05fd"
+        },
+        {
+          "name": "dist/compiled/safe-stable-stringify/LICENSE",
+          "sha256": "3a6d6de49d284a36c5d271ef0e62eca1838cc460dd7630e3f2c347c8f5b2232a"
+        },
+        {
+          "name": "dist/compiled/sass-loader/LICENSE",
+          "sha256": "2af12ca8b612a22e6659ae68e0e59ee7ac792718c45524a989b512c49c5f5879"
+        },
+        {
+          "name": "dist/compiled/scheduler/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/scheduler-experimental/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        },
+        {
+          "name": "dist/compiled/schema-utils2/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/schema-utils3/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/semver/LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        },
+        {
+          "name": "dist/compiled/send/LICENSE",
+          "sha256": "25a328069fe771f8ed5b6f983ed4b0e6c84b3312ac0f69b28c3d52dc277962c9"
+        },
+        {
+          "name": "dist/compiled/serve-handler/LICENSE",
+          "sha256": "be8ba42db3b7c3dbb064bcdc1bbbb191c0a39c8851c2a53564e97c7eea301bca"
+        },
+        {
+          "name": "dist/compiled/shell-quote/LICENSE",
+          "sha256": "8bb16db1b047019e4395965f2cf3611b06c34bf86dc2d0210b3c3f91b53c21fe"
+        },
+        {
+          "name": "dist/compiled/source-map/LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        },
+        {
+          "name": "dist/compiled/source-map08/LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        },
+        {
+          "name": "dist/compiled/stacktrace-parser/LICENSE",
+          "sha256": "e1898814043cb5500483d9c8517edda824b352f696d35e5043fcfb537c221531"
+        },
+        {
+          "name": "dist/compiled/stream-browserify/LICENSE",
+          "sha256": "96e5193183476a03da6667d217ce14110191d26ee105338086e94339edf40d5a"
+        },
+        {
+          "name": "dist/compiled/stream-http/LICENSE",
+          "sha256": "a0e6357a5e8ea65827addeb383e0948a1874d2f46bc7feaf6349b7a376ed6e98"
+        },
+        {
+          "name": "dist/compiled/string_decoder/LICENSE",
+          "sha256": "11f2aafb37d06b3ee5bdaf06e9811141d0da05263c316f3d627f45c20d43261b"
+        },
+        {
+          "name": "dist/compiled/strip-ansi/LICENSE",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        },
+        {
+          "name": "dist/compiled/superstruct/LICENSE",
+          "sha256": "0f644bc01d85e4b1958bdfe5a851704bd886404c78188d4d6fba43dc8293bc91"
+        },
+        {
+          "name": "dist/compiled/tar/LICENSE",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004"
+        },
+        {
+          "name": "dist/compiled/terser/LICENSE",
+          "sha256": "901d0a7fcaccaae9917d165039c0473c354e5da2e0e94140dde67aad9ffb19da"
+        },
+        {
+          "name": "dist/compiled/text-table/LICENSE",
+          "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b"
+        },
+        {
+          "name": "dist/compiled/timers-browserify/LICENSE",
+          "sha256": "d5f14c3258420dfe5a3b641a143d6e6dd90eabb5962244d937e25699c3a45ec9"
+        },
+        {
+          "name": "dist/compiled/tty-browserify/LICENSE",
+          "sha256": "435a6722c786b0a56fbe7387028f1d9d3f3a2d0fb615bb8fee118727c3f59b7b"
+        },
+        {
+          "name": "dist/compiled/ua-parser-js/LICENSE",
+          "sha256": "fb9548e36708f09ae0cc1047ebd8153928bfe5bed67e4051f0ace552bdcbf0b3"
+        },
+        {
+          "name": "dist/compiled/util/LICENSE",
+          "sha256": "6239c6144c31e58cf925c34483606969c555574d64ffa96518ab5d7f45c75d43"
+        },
+        {
+          "name": "dist/compiled/vm-browserify/LICENSE",
+          "sha256": "3a62887f73cd035ac1068bc0127ce94291f7a03843391f56df3520e2ca2037f8"
+        },
+        {
+          "name": "dist/compiled/watchpack/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/web-vitals/LICENSE",
+          "sha256": "bfdeded4040e05da31ca9b6239dc83bd23fa26ac8db87342a7ca4363f68916ff"
+        },
+        {
+          "name": "dist/compiled/web-vitals-attribution/LICENSE",
+          "sha256": "bfdeded4040e05da31ca9b6239dc83bd23fa26ac8db87342a7ca4363f68916ff"
+        },
+        {
+          "name": "dist/compiled/webpack/LICENSE",
+          "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+        },
+        {
+          "name": "dist/compiled/webpack-sources1/LICENSE",
+          "sha256": "214d0ac13edb475ec426df1979d96fd46b443debc466c0fb592e32152ae5a940"
+        },
+        {
+          "name": "dist/compiled/webpack-sources3/LICENSE",
+          "sha256": "214d0ac13edb475ec426df1979d96fd46b443debc466c0fb592e32152ae5a940"
+        },
+        {
+          "name": "dist/compiled/ws/LICENSE",
+          "sha256": "dcd0a622a3a2c94fe3aa6238b76363f87df442afe788cbad966afe943ed62281"
+        },
+        {
+          "name": "dist/compiled/zod/LICENSE",
+          "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+        },
+        {
+          "name": "dist/compiled/zod-validation-error/LICENSE",
+          "sha256": "03cc9a630489a2544b799548a0e8b134f382fe09fa06dc22b339091b28b8f4a8"
+        },
+        {
+          "name": "license.md",
+          "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224"
+        }
+      ]
+    },
+    {
+      "name": "oblivious-set",
+      "version": "1.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/pubkey/oblivious-set",
+      "author": "pubkey",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "fae4e3d1830d0a8f795a06b07f4a8bbc343ff619fb6339de71f4b8986fa4242d"
+        }
+      ]
+    },
+    {
+      "name": "once",
+      "version": "1.4.0",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git://github.com/isaacs/once",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        }
+      ]
+    },
+    {
+      "name": "onetime",
+      "version": "5.1.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/onetime",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+        }
+      ]
+    },
+    {
+      "name": "p-limit",
+      "version": "2.3.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/p-limit",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "p-locate",
+      "version": "3.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/p-locate",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "p-try",
+      "version": "2.2.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/p-try",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "path-exists",
+      "version": "3.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/path-exists",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        }
+      ]
+    },
+    {
+      "name": "path-is-absolute",
+      "version": "1.0.1",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/path-is-absolute",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+        }
+      ]
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "alexeyraspopov/picocolors",
+      "author": "Alexey Raspopov",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+        }
+      ]
+    },
+    {
+      "name": "pkg-up",
+      "version": "3.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/pkg-up",
+      "author": "Sindre Sorhus",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "name": "postcss",
+      "version": "8.4.31",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "postcss/postcss",
+      "author": "Andrey Sitnik <andrey@sitnik.ru>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c4630ac8b89cb317ac5bdd60ac5e4e185eab9bd5151a0c7b3afa41aa83d7ec9b"
+        }
+      ]
+    },
+    {
+      "name": "proxy-from-env",
+      "version": "2.1.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/Rob--W/proxy-from-env.git",
+      "author": "Rob Wu <rob@robwu.nl> (https://robwu.nl/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "f55828df4b8752c48e765a806465b76a103e3cb363379c569b15a1df2ba2d79e"
+        }
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.8",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/react/react.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-i18next",
+      "version": "17.0.12",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/i18next/react-i18next.git",
+      "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "29b8ae456ef442e53a98df183ad088cf98c2ece73aa84c462330c43e665b8ab2"
+        }
+      ]
+    },
+    {
+      "name": "react-query",
+      "version": "3.39.3",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "tannerlinsley/react-query",
+      "author": "tannerlinsley",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8802066b56e5473d7d0084fe7ee633a3e3377fd344d8408c620e3569dc604fe1"
+        }
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.2.8",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/react/react.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "remove-accents",
+      "version": "0.5.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/tyxla/remove-accents",
+      "author": "Marin Atanasov",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "d1a4d73a0c668a735b4a74e2858396a39cb3110ca14c9baff8136ab1b5a479ee"
+        }
+      ]
+    },
+    {
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "floatdrop/require-from-string",
+      "author": "Vsevolod Strukchinsky",
+      "files": [
+        {
+          "name": "license",
+          "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f"
+        }
+      ]
+    },
+    {
+      "name": "rimraf",
+      "version": "3.0.2",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git://github.com/isaacs/rimraf.git",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.27.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/facebook/react.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "semver",
+      "version": "7.8.0",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "git+https://github.com/npm/node-semver.git",
+      "author": "GitHub Inc.",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        }
+      ]
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.1",
+      "license": "BSD-3-Clause",
+      "selectedLicense": "BSD-3-Clause",
+      "repository": "7rulnik/source-map-js",
+      "author": "Valentin 7rulnik Semirulnik <v7rulnik@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        }
+      ]
+    },
+    {
+      "name": "styled-jsx",
+      "version": "5.1.6",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "vercel/styled-jsx",
+      "files": [
+        {
+          "name": "license.md",
+          "sha256": "24d4a4580df855c345705b3016404f0c9da7e7674dc3b21a3ce7d0e5d0c37e2d"
+        }
+      ]
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "license": "0BSD",
+      "selectedLicense": "0BSD",
+      "repository": "https://github.com/Microsoft/tslib.git",
+      "author": "Microsoft Corp.",
+      "files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+        }
+      ]
+    },
+    {
+      "name": "type-fest",
+      "version": "2.19.0",
+      "license": "(MIT OR CC0-1.0)",
+      "selectedLicense": "MIT",
+      "repository": "sindresorhus/type-fest",
+      "author": "Sindre Sorhus",
+      "declaration": {
+        "source": "https://raw.githubusercontent.com/sindresorhus/type-fest/d07df21f8b79e35ad8411cb9ceb8b5cb8f40f9d4/license-mit",
+        "licenseFile": "type-fest-2.19.0-MIT.txt",
+        "note": "MIT alternative chosen from the dual MIT/CC0 declaration. Text retrieved from the exact published gitHead."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "ec402d53d882170424b5eaee09d2d6787222e9082ef3501c6035c4fff16f02ff"
+        }
+      ]
+    },
+    {
+      "name": "unload",
+      "version": "2.2.0",
+      "license": "Apache-2.0",
+      "selectedLicense": "Apache-2.0",
+      "repository": "git+https://github.com/pubkey/unload.git",
+      "author": "pubkey",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "dd245117c7860689c6b7cec5e7decb11a36c6aeb9e267352da4f7595d7f82c24"
+        }
+      ]
+    },
+    {
+      "name": "uplot",
+      "version": "1.6.32",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/leeoniya/uPlot.git",
+      "author": "Leon Sorokin <leeoniya@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8f989229699b4fe2f1a0432d0e9edc338a8a911e250e2d1b01ecd770a5f5b1bd"
+        }
+      ]
+    },
+    {
+      "name": "use-sync-external-store",
+      "version": "1.6.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/facebook/react.git",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "uuid",
+      "version": "14.0.0",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "https://github.com/uuidjs/uuid.git",
+      "files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "beaa6b04fb82e41dd2ad679e19e27953afb5999b1abbb455b6564e78ebfeb332"
+        }
+      ]
+    },
+    {
+      "name": "uuid4",
+      "version": "2.0.3",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "https://github.com/tracker1/node-uuid4.git",
+      "author": "Michael J. Ryan <tracker1@gmail.com>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "d08c496d9ec33ade08f2a5d21a33e4464a06f4cdbc355905456fee62da1a8d6a"
+        }
+      ]
+    },
+    {
+      "name": "wrappy",
+      "version": "1.0.2",
+      "license": "ISC",
+      "selectedLicense": "ISC",
+      "repository": "https://github.com/npm/wrappy",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+        }
+      ]
+    },
+    {
+      "name": "xal-node",
+      "version": "1.1.6-beta2",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/unknownskl/xal-node.git",
+      "author": "UnknownSKL <info@jimkroon.nl>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "ea2cffc30c7c7ed8c602f1dd8cfc03dff8ff6bd67e2a2248fd7a26973e92d3ab"
+        }
+      ]
+    },
+    {
+      "name": "xbox-webapi",
+      "version": "2.0.0-beta4",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/unknownskl/xbox-webapi-node.git",
+      "author": "UnknownSKL <info@jimkroon.nl>",
+      "files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bec2178e5d9311dc2d5daa0afca80a6f2bb0a3da84909cfd2277f35375ac1856"
+        }
+      ]
+    },
+    {
+      "name": "xbox-xcloud-player",
+      "version": "0.2.11",
+      "license": "MIT",
+      "selectedLicense": "MIT",
+      "repository": "git+https://github.com/unknownskl/xbox-xcloud-player.git",
+      "author": "Jim Kroon <UnknownSKL>",
+      "declaration": {
+        "source": "https://registry.npmjs.org/xbox-xcloud-player/0.2.11",
+        "commit": "34775ed5c4bd85c54a3d50293cd6e1be67675e23",
+        "note": "Published package and upstream manifest declare MIT; neither supplies a standalone license notice. Author attribution and standard MIT terms are reproduced; no copyright year has been invented."
+      },
+      "files": [
+        {
+          "name": "SUPPLEMENTAL-LICENSE-NOTICE.txt",
+          "sha256": "46bde37c4048dff50a58bacb9a6d72a12be70dc6bb320aea9495cec90e1ea627"
+        }
+      ]
+    }
+  ]
+}
